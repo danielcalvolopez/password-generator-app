@@ -1,0 +1,36 @@
+.checkbox-wrapper {
+  input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    padding-right: 3px;
+    background-color: inherit;
+    border: 2px solid var(--Green);
+    cursor: pointer;
+
+    &:after {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(36, 35, 44)' stroke-width='3' fill='none' d='M1 5.607 4.393 9l8-8'/%3E%3C/svg%3E");
+      width: 10px;
+      height: 10px;
+      display: none;
+      stroke: var(--DarkGray);
+    }
+
+    &:checked {
+      background-color: var(--Green);
+    }
+    &:checked:after {
+      display: block;
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}

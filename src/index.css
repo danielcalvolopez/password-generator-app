@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Overpass";
+  margin: 2rem;
+  font-size: 25px;
+  background-color: var(--NavyBlue);
+  min-height: 100vh;
+  color: var(--AlmostWhite);
+  font-family: "JetBrains Mono", monospace;
+
+  --DarkGray: #24232c;
+  --LightGray: #817d92;
+  --AlmostWhite: #e6e5ea;
+  --NavyBlue: #18171f;
+  --Green: #a4ffaf;
+  --Red: #f64a4a;
+  --Orange: #fb7c58;
+  --Yellow: #f8cd65;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+p {
+  font-size: 18px;
+}

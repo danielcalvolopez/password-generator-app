@@ -7,14 +7,7 @@ import Slider from "./UI/Slider";
 const PasswordGenerator = () => {
   return (
     <Card className="card-generator">
-      <div className="character-length-container">
-        <div className="character-length">
-          <p>Character Length</p>
-          <h1>10</h1>
-        </div>
-        <Slider />
-      </div>
-
+      <Slider />
       <div className="checkboxes">
         <Checkbox label="Include Uppercase Letters" />
         <Checkbox label="Include Lowercase Letters" />

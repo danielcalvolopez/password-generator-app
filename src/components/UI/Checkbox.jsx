@@ -1,10 +1,15 @@
 import "./Checkbox.scss";
 
-const Checkbox = ({ label }) => {
+const Checkbox = ({ label, value, onChange }) => {
   return (
     <div className="checkbox-wrapper">
       <label>
-        <input className="checkbox" type="checkbox" />
+        <input
+          value={value}
+          onChange={onChange}
+          className="checkbox"
+          type="checkbox"
+        />
         <p>{label}</p>
       </label>
     </div>

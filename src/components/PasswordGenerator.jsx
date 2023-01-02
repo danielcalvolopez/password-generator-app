@@ -4,7 +4,7 @@ import Card from "./UI/Card";
 import Checkbox from "./UI/Checkbox";
 import Slider from "./UI/Slider";
 import "./PasswordGenerator.scss";
-import { PasswordContext } from "../context/PasswordContext";
+import { PasswordSettingsContext } from "../context/PasswordSettingsContext";
 
 const PasswordGenerator = () => {
   const {
@@ -16,14 +16,7 @@ const PasswordGenerator = () => {
     setIncludeNumbers,
     includeSymbols,
     setIncludeSymbols,
-  } = useContext(PasswordContext);
-
-  console.log(
-    includeUppercase,
-    includeLowercase,
-    includeNumbers,
-    includeSymbols
-  );
+  } = useContext(PasswordSettingsContext);
 
   return (
     <Card className="card-generator">

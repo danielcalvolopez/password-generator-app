@@ -33,7 +33,8 @@
         background-color: var(--LightGray);
       }
 
-      &:active {
+      &:active,
+      &:focus {
         border: 2px solid var(--Green);
         background-color: var(--NavyBlue);
       }
@@ -49,7 +50,8 @@
         background-color: var(--LightGray);
       }
 
-      &:active {
+      &:active,
+      &:focus {
         border: 2px solid var(--Green);
         background-color: var(--NavyBlue);
       }

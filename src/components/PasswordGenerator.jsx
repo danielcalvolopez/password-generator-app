@@ -1,15 +1,29 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Button from "./UI/Button";
 import Card from "./UI/Card";
 import Checkbox from "./UI/Checkbox";
 import Slider from "./UI/Slider";
 import "./PasswordGenerator.scss";
+import { PasswordContext } from "../context/PasswordContext";
 
 const PasswordGenerator = () => {
-  const [includeUppercase, setIncludeUppercase] = useState(false);
-  const [includeLowercase, setIncludeLowercase] = useState(false);
-  const [includeNumbers, setIncludeNumbers] = useState(false);
-  const [includeSymbols, setIncludeSymbols] = useState(false);
+  const {
+    includeUppercase,
+    setIncludeUppercase,
+    includeLowercase,
+    setIncludeLowercase,
+    includeNumbers,
+    setIncludeNumbers,
+    includeSymbols,
+    setIncludeSymbols,
+  } = useContext(PasswordContext);
+
+  console.log(
+    includeUppercase,
+    includeLowercase,
+    includeNumbers,
+    includeSymbols
+  );
 
   return (
     <Card className="card-generator">
@@ -18,28 +32,28 @@ const PasswordGenerator = () => {
         <Checkbox
           value={includeUppercase}
           onChange={() => {
-            setIncludeUppercase(true);
+            setIncludeUppercase(!includeUppercase);
           }}
           label="Include Uppercase Letters"
         />
         <Checkbox
           value={includeLowercase}
           onChange={() => {
-            setIncludeLowercase(true);
+            setIncludeLowercase(!includeLowercase);
           }}
           label="Include Lowercase Letters"
         />
         <Checkbox
           value={includeNumbers}
           onChange={() => {
-            setIncludeNumbers(true);
+            setIncludeNumbers(!includeNumbers);
           }}
           label="Include Numbers"
         />
         <Checkbox
           value={includeSymbols}
           onChange={() => {
-            setIncludeSymbols(true);
+            setIncludeSymbols(!includeSymbols);
           }}
           label="Include Symbols"
         />

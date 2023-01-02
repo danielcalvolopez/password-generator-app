@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useContext, useMemo } from "react";
+import { PasswordContext } from "../../context/PasswordContext";
 import "./Slider.scss";
 
 const Slider = () => {
-  const [characterLength, setCharacterLength] = useState(10);
+  const { characterLength, setCharacterLength } = useContext(PasswordContext);
+
+  const characterLengthValue = useMemo(
+    () => ({ characterLength, setCharacterLength }, [characterLength])
+  );
 
   const handleCharacterLength = (event) => {
     setCharacterLength(event.target.value);

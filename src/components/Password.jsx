@@ -1,10 +1,13 @@
+import { useContext } from "react";
+import { PasswordContext } from "../context/PasswordContext";
 import "./Password.scss";
 import Card from "./UI/Card";
 
 const Password = () => {
+  const { password } = useContext(PasswordContext);
   return (
     <Card className="card-password">
-      <h1>P4$5W0rD!</h1>
+      <h1>{password}</h1>
 
       <div className="copy">
         {/* <p>COPIED</p> */}

@@ -25,4 +25,10 @@
       fill: var(--Green);
     }
   }
+
+  &:active {
+    background-color: var(--DarkGray);
+    color: var(--Green);
+    border: 1px solid var(--Green);
+  }
 }

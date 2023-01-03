@@ -8,6 +8,8 @@ import { PasswordSettingsContext } from "../context/PasswordSettingsContext";
 import { PasswordContext } from "../context/PasswordContext";
 import { CharacterLengthContext } from "../context/CharacterLengthContext";
 import passwordStrengths from "../utils/constants/passwordStrengths";
+import passwordGenerator from "../utils/functions/passwordGenerator";
+import passwordStrengthSteps from "../utils/functions/passwordStrengthSteps";
 
 const PasswordGenerator = () => {
   const [passwordStrength, setPasswordStrength] = useState(
@@ -29,42 +31,22 @@ const PasswordGenerator = () => {
   const { characterLength } = useContext(CharacterLengthContext);
 
   useEffect(() => {
-    if (characterLength < 10) {
-      setPasswordStrength(passwordStrengths.medium);
-    }
-    if (characterLength < 8) {
-      setPasswordStrength(passwordStrengths.weak);
-    }
-    if (characterLength <= 4) {
-      setPasswordStrength(passwordStrengths.tooWeak);
-    }
-    if (characterLength >= 15) {
-      setPasswordStrength(passwordStrengths.strong);
-    }
+    passwordStrengthSteps(
+      characterLength,
+      setPasswordStrength,
+      passwordStrengths
+    );
   }, [characterLength]);
 
   const handleOnSubmit = () => {
-    let characters = "abcdefghijklmnopqrstuvwxyz";
-    if (includeLowercase) {
-      characters += "abcdefghijklmnopqrstuvwxyz";
-    }
-    if (includeUppercase) {
-      characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    }
-    if (includeNumbers) {
-      characters += "0123456789";
-    }
-    if (includeSymbols) {
-      characters += "|!@·#$%^&*()/=?¿'¡^`+*´ç¨Ç[]}{_-.:,;<>ºª";
-    }
-    let password = "";
-    for (let i = 0; i < characterLength; i++) {
-      const randomChar =
-        characters[Math.floor(Math.random() * characters.length)];
-
-      password += randomChar;
-    }
-    setPassword(password);
+    passwordGenerator(
+      includeLowercase,
+      includeUppercase,
+      includeNumbers,
+      includeSymbols,
+      characterLength,
+      setPassword
+    );
   };
 
   return (

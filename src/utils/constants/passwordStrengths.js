@@ -4,7 +4,7 @@ const passwordStrengths = [
     className: "password-strength-level-icon-red",
   },
   {
-    name: "Weak!",
+    name: "Weak",
     className: "password-strength-level-icon-orange",
   },
   {

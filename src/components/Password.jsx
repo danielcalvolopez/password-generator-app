@@ -5,6 +5,7 @@ import Card from "./UI/Card";
 
 const Password = () => {
   const { password } = useContext(PasswordContext);
+
   return (
     <Card className="card-password">
       <h1>{password}</h1>

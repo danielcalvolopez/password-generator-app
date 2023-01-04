@@ -4,7 +4,8 @@ const passwordGenerator = (
   includeNumbers,
   includeSymbols,
   characterLength,
-  setPassword
+  setPassword,
+  setPasswordhasChanged
 ) => {
   let characters = "abcdefghijklmnopqrstuvwxyz";
   if (includeLowercase) {
@@ -27,6 +28,7 @@ const passwordGenerator = (
     password += randomChar;
   }
   setPassword(password);
+  setPasswordhasChanged(true);
 };
 
 export default passwordGenerator;

@@ -4,7 +4,7 @@ import "./Password.scss";
 import Card from "./UI/Card";
 
 const Password = () => {
-  const { password } = useContext(PasswordContext);
+  const { password, passwordHasChanged } = useContext(PasswordContext);
   const [passwordCopied, setPasswordCopied] = useState(false);
 
   const handleOnCopied = () => {
@@ -15,7 +15,11 @@ const Password = () => {
 
   return (
     <Card className="card-password">
-      <h1>{password}</h1>
+      {passwordHasChanged ? (
+        <h1 className="changed-password">{password}</h1>
+      ) : (
+        <h1 className="initial-password">{password}</h1>
+      )}
 
       <div className="copy">
         {passwordCopied && <p>COPIED</p>}

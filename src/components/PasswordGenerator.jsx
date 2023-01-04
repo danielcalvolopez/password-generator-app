@@ -26,7 +26,7 @@ const PasswordGenerator = () => {
     setIncludeSymbols,
   } = useContext(PasswordSettingsContext);
 
-  const { setPassword } = useContext(PasswordContext);
+  const { setPassword, setPasswordHasChanged } = useContext(PasswordContext);
 
   const { characterLength } = useContext(CharacterLengthContext);
 
@@ -45,7 +45,8 @@ const PasswordGenerator = () => {
       includeNumbers,
       includeSymbols,
       characterLength,
-      setPassword
+      setPassword,
+      setPasswordHasChanged
     );
   };
 
@@ -54,30 +55,30 @@ const PasswordGenerator = () => {
       <Slider />
       <div className="checkboxes">
         <Checkbox
-          value={includeUppercase}
-          onChange={() => {
-            setIncludeUppercase(!includeUppercase);
-          }}
-          label="Include Uppercase Letters"
-        />
-        <Checkbox
           value={includeLowercase}
           onChange={() => {
-            setIncludeLowercase(!includeLowercase);
+            setIncludeLowercase((prev) => !prev);
           }}
           label="Include Lowercase Letters"
         />
         <Checkbox
+          value={includeUppercase}
+          onChange={() => {
+            setIncludeUppercase((prev) => !prev);
+          }}
+          label="Include Uppercase Letters"
+        />
+        <Checkbox
           value={includeNumbers}
           onChange={() => {
-            setIncludeNumbers(!includeNumbers);
+            setIncludeNumbers((prev) => !prev);
           }}
           label="Include Numbers"
         />
         <Checkbox
           value={includeSymbols}
           onChange={() => {
-            setIncludeSymbols(!includeSymbols);
+            setIncludeSymbols((prev) => !prev);
           }}
           label="Include Symbols"
         />

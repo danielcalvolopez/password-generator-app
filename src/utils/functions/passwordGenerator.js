@@ -18,7 +18,7 @@ const passwordGenerator = (
     characters += "0123456789";
   }
   if (includeSymbols) {
-    characters += "|!@·#$%^&*()/=?¿'¡^`+*´ç¨Ç[]}{_-.:,;<>ºª";
+    characters += "|!@·#$%&*()/=?¿'¡+*Ç[]}{_-.:,;<>ºª";
   }
   let password = "";
   for (let i = 0; i < characterLength; i++) {

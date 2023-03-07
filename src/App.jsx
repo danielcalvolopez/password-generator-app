@@ -4,11 +4,13 @@ import PasswordGenerator from "./components/PasswordGenerator";
 
 const App = () => {
   return (
-    <div className="container">
-      <h2 className="title">Password Generator</h2>
-      <Password />
-      <PasswordGenerator />
-    </div>
+    <>
+      <div className="container">
+        <h2 className="title">Password Generator</h2>
+        <Password />
+        <PasswordGenerator />
+      </div>
+    </>
   );
 };
 

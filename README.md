@@ -1,29 +1,24 @@
-# Frontend Mentor - Password generator app
+# Password generator App
 
-![Design preview for the Password generator app coding challenge](./preview.jpg)
+![](./preview.png)
 
-**To do this challenge, you need a strong understanding of HTML, CSS, and JavaScript.**
+Dependencies:
 
-## The challenge
+- React JS
+- Sass
 
-Your challenge is to build out this password generator app and get it looking as close to the design as possible.
+First run npm install to add all the dependencies.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-Your users should be able to:
+This app generates random passwords. You can select multiple options to build a strong one, including a slider for the length, and checkboxes for upper and lowe case letters, numbers and symbols. While you select your settings you receive feedback at the same time, stating how weak or strong your password will be with the selected options. The different password strengths are stored in a constant file called passwordStrengths.
 
-- Generate a password based on the selected inclusion options
-- Copy the generated password to the computer's clipboard
-- See a strength rating for their generated password
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+Once you press the generate button, you will get your password ready at the top, so you can copy it to your clipboard with just one click.
 
-## Where to find everything
-
-Your task is to build out the project to the design file provided. We provide both Sketch and Figma versions of the design, so you can choose which tool you prefer to use. You can download the design file on the platform. **Please be sure not to share them with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
-
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized. Some are reusable at multiple screen sizes. So if you don't see an image in a specific folder, it will typically be in another folder for that page.
-
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
-
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project. Our fonts always come from [Google Fonts](https://fonts.google.com/).
+There are 3 different contexts, one is character lenght, the second one is to manage the state of the generated password, and the last one is to control what the password includes (uppercase, lowercase, numbers, symbols)
